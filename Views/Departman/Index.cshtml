@@ -1,0 +1,27 @@
+﻿@model IEnumerable<mvc_mongodb.Models.Departman>
+
+<h2>Departmanlar</h2>
+
+<p>
+    <a asp-action="Create">Yeni Departman Ekle</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Departman Adı</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.DepartmanAd</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@d.Id">Göster</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

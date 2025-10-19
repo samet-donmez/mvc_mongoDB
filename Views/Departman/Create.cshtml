@@ -1,0 +1,14 @@
+﻿@model mvc_mongodb.Models.Departman
+
+<h2>Yeni Departman Ekle</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Departman Adı</label>
+        <input asp-for="DepartmanAd" class="form-control" />
+        <span asp-validation-for="DepartmanAd" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Kaydet</button>
+</form>
